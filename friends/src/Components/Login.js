@@ -29,7 +29,7 @@ class Login extends React.Component {
         console.log(res);
         localStorage.setItem("token", res.data.payload);
         // nice for UX, auto redirect to the main dash
-        this.props.history.push("/protected");
+        this.props.history.push("/friendsList");
       })
       .catch(err => {
         console.log(err);

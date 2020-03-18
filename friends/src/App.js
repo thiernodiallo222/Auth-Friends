@@ -1,10 +1,12 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, NavLink, Switch } from "react-router-dom";
 
 import Login from "./components/Login";
-import GasPrices from "./components/GasPrices";
 import PrivateRoute from "./components/PrivateRoute";
+import FriendsList from './components/FriendsList';
+import AnotherProtectedComp from './components/AnotherProtectedComp';
+
 
 function App() {
   return (
@@ -13,14 +15,17 @@ function App() {
       <div className="App">
         <ul>
           <li>
-            <Link to="/login">Login</Link>
+            <NavLink to="/login">Login</NavLink>
           </li>
           <li>
-            <Link to="/protected">Protected Page</Link>
+              <NavLink to="/friendsList">List of Friends</NavLink>
+              <NavLink to="/otherComp">Anoter Protected Page</NavLink>
+             
           </li>
         </ul>
         <Switch>
-          <PrivateRoute exact path="/protected" component={GasPrices} />
+            <PrivateRoute exact path="/friendsList" component={FriendsList} />
+            <PrivateRoute exact path="/otherComp" component={AnotherProtectedComp} />
           <Route path="/login" component={Login} />
           <Route component={Login} />
         </Switch>

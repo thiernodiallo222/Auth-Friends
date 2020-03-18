@@ -1,7 +1,5 @@
 import React from 'react';
-import './App.css';
 import { BrowserRouter as Router, Route, NavLink, Switch } from "react-router-dom";
-
 import Login from "./components/Login";
 import PrivateRoute from "./components/PrivateRoute";
 import FriendsList from './components/FriendsList';
@@ -30,7 +28,8 @@ function App() {
           <Route component={Login} />
         </Switch>
       </div>
-    </Router>
+      </Router>
+      {/* <FriendsList /> */}
     </div>
   );
 }

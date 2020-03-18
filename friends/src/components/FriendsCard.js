@@ -1,9 +1,12 @@
 import React from 'react'
+import './Style.css';
 
 const FriendsCard = (props) => {
     return (
-        <div>
-            <p>Name:{props.name} Age:{props.age} Email:{props.email}</p>
+        <div className="friends-card">
+            <p>Name:{props.name}</p>
+             <p>Age:{props.age}</p>
+             <p>Email:{props.email}</p>
         </div>
     )
 }

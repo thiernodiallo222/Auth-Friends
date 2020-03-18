@@ -3,7 +3,7 @@ import { axiosWithAuth } from "../utils/axiosWithAuth";
 import FriendsCard from './FriendsCard';
 import './Style.css';
 
- class FriendsList extends Component {
+ class FriendsList extends React.Component {
     state = {
         friends:[]
     }
@@ -18,7 +18,7 @@ import './Style.css';
              .then(res => {
                  console.log(res);
                  this.setState({
-                     friends: res.data.data
+                     friends: res.data
                  })
              }).catch(err => {
                  console.log('error', err);

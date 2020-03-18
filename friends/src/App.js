@@ -4,6 +4,8 @@ import Login from "./components/Login";
 import PrivateRoute from "./components/PrivateRoute";
 import FriendsList from './components/FriendsList';
 import AnotherProtectedComp from './components/AnotherProtectedComp';
+import AddNewFriend from './components/AddNewFriend';
+
 
 
 function App() {
@@ -18,11 +20,13 @@ function App() {
           <li>
               <NavLink to="/friendsList">List of Friends</NavLink>
               <NavLink to="/otherComp">Anoter Protected Page</NavLink>
+              <NavLink to ="addFriend">Add an new Friend</NavLink>
              
           </li>
         </ul>
         <Switch>
             <PrivateRoute exact path="/friendsList" component={FriendsList} />
+            <PrivateRoute exact path="/addFriend" component={AddNewFriend} />
             <PrivateRoute exact path="/otherComp" component={AnotherProtectedComp} />
           <Route path="/login" component={Login} />
           <Route component={Login} />
